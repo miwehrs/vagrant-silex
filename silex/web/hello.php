@@ -2,6 +2,7 @@
 
 //Hello
 $name = isset($_GET["name"]) ? $_GET["name"] : "World";
+$stop = isset($_GET["stop"]) ? $_GET["stop"] : 5;
 echo "Hello $name!<br/><hr/>";
 
 // gerade-ungerade
@@ -15,10 +16,6 @@ for ($i = 0; $i <= 5; $i++) {
 echo "<hr/>";
 
 // Zahlenfolge
-$stop = $_GET["stop"];
-if (!$stop)
-    $stop = 5;
-
 for ($i = 1; $i <= $stop; $i++) {
     echo $i;
 }

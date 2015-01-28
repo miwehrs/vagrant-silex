@@ -12,6 +12,7 @@ for($i = 0; $i <= $stop; $i++) {
 }
 echo '<hr/>';
 
+// Funktionen
 // Hello
 function hello($name)
 {
@@ -30,6 +31,8 @@ function quadrat($stop)
 // Fakultät
 function fakultaet($stop)
 {
+    if($stop == 0)
+        return 0;
     if($stop > 1)
         return $stop * fakultaet($stop - 1);
     return 1;
