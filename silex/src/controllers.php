@@ -14,3 +14,10 @@ $app->get('/welcome-twig/{name}', function ($name) use ($app) {
         array('name' => $name)
     );
 });
+
+$app->get('/Bootstrap', function ($name) use ($app) {
+    return $app['twig']->render(
+        'Bootstrap.html.php',
+        array('name' => $name)
+    );
+});
