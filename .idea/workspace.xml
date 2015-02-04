@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a00ea861-1ed7-4b31-a435-f78c57d013c1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/silex/web/templates/books.html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/silex/web/templates/home.html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/silex/web/templates/music.html.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/silex/web/templates/settings.html.php" />
-      <change type="DELETED" beforePath="C:\Users\wehrstei\Documents\DHBW\Webengineering\vagrant-silex\silex\web\templates\Bootstrap.html.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/src/controllers.php" afterPath="$PROJECT_DIR$/silex/src/controllers.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/silex/web/templates/layout.html.php" afterPath="$PROJECT_DIR$/silex/web/templates/layout.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vagrant-silex.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,20 +80,20 @@
       <file leaf-file-name="layout.html.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/silex/web/templates/layout.html.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.023809524" vertical-offset="102" max-vertical-offset="1105">
+            <state vertical-scroll-proportion="-0.26190478" vertical-offset="306" max-vertical-offset="1105">
               <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
               <folding>
-                <marker date="1423042105293" expanded="true" signature="1355:1553" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="1632:1665" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="1632:1837" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="1674:1832" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="1911:1944" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="1911:2115" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="1953:2110" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="2192:2225" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="2192:2401" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="2237:2396" placeholder="..." />
-                <marker date="1423042105293" expanded="true" signature="2501:2526" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="1287:1473" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="1548:1577" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="1548:1737" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="1586:1732" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="1807:1836" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="1807:1995" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="1845:1990" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="2068:2097" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="2068:2261" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="2109:2256" placeholder="..." />
+                <marker date="1423044628604" expanded="true" signature="2345:2366" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -121,9 +114,9 @@
         <option value="$PROJECT_DIR$/silex/web/templates/home.html.php" />
         <option value="$PROJECT_DIR$/silex/web/templates/music.html.php" />
         <option value="$PROJECT_DIR$/silex/src/controllers.php" />
-        <option value="$PROJECT_DIR$/silex/web/templates/layout.html.php" />
         <option value="$PROJECT_DIR$/silex/web/templates/settings.html.php" />
         <option value="$PROJECT_DIR$/silex/web/templates/books.html.php" />
+        <option value="$PROJECT_DIR$/silex/web/templates/layout.html.php" />
       </list>
     </option>
   </component>
@@ -247,24 +240,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vagrant-silex" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vagrant-silex" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="silex" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -338,7 +313,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -406,17 +381,17 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1423042105293" expanded="true" signature="1355:1553" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1632:1665" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1632:1837" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1674:1832" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1911:1944" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1911:2115" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1953:2110" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="2192:2225" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="2192:2401" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="2237:2396" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="2501:2526" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1287:1473" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1548:1577" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1548:1737" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1586:1732" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1807:1836" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1807:1995" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1845:1990" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="2068:2097" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="2068:2261" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="2109:2256" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="2345:2366" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -550,20 +525,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/silex/web/templates/layout.html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.023809524" vertical-offset="102" max-vertical-offset="1105">
+        <state vertical-scroll-proportion="-0.26190478" vertical-offset="306" max-vertical-offset="1105">
           <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
           <folding>
-            <marker date="1423042105293" expanded="true" signature="1355:1553" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1632:1665" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1632:1837" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1674:1832" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1911:1944" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1911:2115" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="1953:2110" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="2192:2225" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="2192:2401" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="2237:2396" placeholder="..." />
-            <marker date="1423042105293" expanded="true" signature="2501:2526" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1287:1473" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1548:1577" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1548:1737" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1586:1732" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1807:1836" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1807:1995" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="1845:1990" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="2068:2097" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="2068:2261" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="2109:2256" placeholder="..." />
+            <marker date="1423044628604" expanded="true" signature="2345:2366" placeholder="..." />
           </folding>
         </state>
       </provider>
