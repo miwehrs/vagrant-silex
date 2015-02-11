@@ -22,37 +22,29 @@ $app->get('/home', function () use($app) {
     );
 });
 
-$app->get('/music', function() use($app) {
-    return $app['templating']->render(
-        'music.html.php',
-        array()
-    );
-});
-
-$app->get('/books', function() use($app) {
-    return $app['templating']->render(
-        'books.html.php',
-        array()
-    );
-});
-
-$app->get('/settings', function() use($app) {
-    return $app['templating']->render(
-        'settings.html.php',
-        array()
-    );
-});
-
 // match -> get und post in einem
 $app->match('/form', function(Request $request) use($app) {
     if ($request->isMethod('post')) {
         $title = $request->get('title');
         $text = $request->get('text');
-        return $title . $text;
+        return $app['templating']->render(
+            'beitraege.html.php',
+            array(
+                'title' => $title,
+                'text' => $text
+            )
+        );
     }
     else {
         return $app['templating']->render(
             'form.html.php'
         );
     }
+});
+
+$app->get('/beitraege', function() use($app) {
+    return $app['templating']->render(
+        'beitraege.html.php',
+        array()
+    );
 });

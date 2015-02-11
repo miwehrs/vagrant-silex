@@ -42,25 +42,15 @@ $title = $slots->get('title', 'Bootstrap')
                                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                                 Home
                                 <span class="sr-only">(current)</span></a></li>
-                        <li <?= $title == "Form" ? 'class="active"' : "" ?>>
+                        <li <?= $title == "Beiträge" ? 'class="active"' : "" ?>>
+                            <a href="/beitraege">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                Beiträge
+                            </a></li>
+                        <li <?= $title == "Neuer Beitrag" ? 'class="active"' : "" ?>>
                             <a href="/form">
                                 <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                                Form
-                            </a></li>
-                        <li <?= $title == "Music" ? 'class="active"' : "" ?>>
-                            <a href="/music">
-                                <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-                                Music
-                            </a></li>
-                        <li <?= $title == "Books" ? 'class="active"' : "" ?>>
-                            <a href="/books">
-                                <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-                                Books
-                            </a></li>
-                        <li <?= $title == "Settings" ? 'class="active"' : "" ?>>
-                            <a href="/settings">
-                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                                Settings
+                                Neuer Beitrag
                             </a></li>
                     </ul>
                 </div>
