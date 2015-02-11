@@ -1,14 +1,24 @@
-<!DOCTYPE html>
+<?php
+/**
+ * Annotations:
+ * @var $view
+ * @var $slots \Symfony\Component\Templating\Helper\SlotsHelper
+ */
+$slots = $view['slots'];
+$title = $slots->get('title', 'Bootstrap')
+?>
 
-<?php $title = $view['slots']->get('title', 'Bootstrap') ?>
+<!DOCTYPE html>
 
 <html>
     <head>
         <title>Bootstrap | <?= $title ?></title>
         <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/stylesheet_bootstrap.css" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <base href="http://localhost:8001/">
     </head>
 
     <body>
@@ -32,6 +42,11 @@
                                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                                 Home
                                 <span class="sr-only">(current)</span></a></li>
+                        <li <?= $title == "Form" ? 'class="active"' : "" ?>>
+                            <a href="/form">
+                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                Form
+                            </a></li>
                         <li <?= $title == "Music" ? 'class="active"' : "" ?>>
                             <a href="/music">
                                 <span class="glyphicon glyphicon-music" aria-hidden="true"></span>

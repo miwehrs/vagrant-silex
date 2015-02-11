@@ -42,3 +42,17 @@ $app->get('/settings', function() use($app) {
         array()
     );
 });
+
+// match -> get und post in einem
+$app->match('/form', function(Request $request) use($app) {
+    if ($request->isMethod('post')) {
+        $title = $request->get('title');
+        $text = $request->get('text');
+        return $title . $text;
+    }
+    else {
+        return $app['templating']->render(
+            'form.html.php'
+        );
+    }
+});
