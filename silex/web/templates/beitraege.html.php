@@ -8,10 +8,8 @@
 
 $view->extend('layout.html.php');
 $view['slots']->set('title', "Beiträge");
-if ($title == '') {
-    $title = 'Leider gibt es noch keine Beiträge';
-}
-$text = $text ? $text : 'Sende den ersten Beitrag';
+$title = isset($title) ? $title : 'Leider gibt es noch keine Beiträge'
+$text = (isset($text)) ? $text : 'Sende den ersten Beitrag';
 ?>
 
 <div class="container">
