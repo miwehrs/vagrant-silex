@@ -8,7 +8,7 @@
 
 $view->extend('layout.html.php');
 $view['slots']->set('title', "Beiträge");
-$title = isset($title) ? $title : 'Leider gibt es noch keine Beiträge'
+$title = isset($title) ? $title : 'Leider gibt es noch keine Beiträge';
 $text = (isset($text)) ? $text : 'Sende den ersten Beitrag';
 ?>
 

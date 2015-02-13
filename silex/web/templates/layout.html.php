@@ -19,6 +19,9 @@ $title = $slots->get('title', 'Bootstrap')
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <base href="http://localhost:8001/">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link type="image/x-icon" href="favicon.ico">
     </head>
 
     <body>
