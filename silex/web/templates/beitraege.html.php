@@ -18,6 +18,7 @@ $text = (isset($text)) ? $text : 'Sende den ersten Beitrag';
             <div class="panel panel-default">
                 <div class="panel-heading"><b>Beiträge</b></div>
                 <div class="panel-body">
+                    <?php for ($i = 0; $posts[i]; $i++)?>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <?php echo $title ?>
@@ -26,6 +27,7 @@ $text = (isset($text)) ? $text : 'Sende den ersten Beitrag';
                             <?php echo $text?>
                         </div>
                     </div>
+                    <?php endfor ?>
                 </div>
             </div>
         </div>

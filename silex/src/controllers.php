@@ -25,32 +25,30 @@ $app->get('/home', function () use($app) {
 // match -> get und post in einem
 $app->match('/form', function(Request $request) use($app) {
     if ($request->isMethod('post')) {
-        $title = $request->get('title');
-        $text = $request->get('text');
+        $dbConnection = $app['db'];
+        $title = $request->get('title', '');
+        $text = $request->get('text', '');
 
         if (($text=='') || ($title=='')) {
             return $app['templating']->render(
                 'form_error.html.php',
                 array()
             );
-        }
-        else {
+        } else {
+            $dbConnection->insert(
+                'blog_post',
+                array(
+                    'title' => $title,
+                    'text' => $text,
+                    'createdAt' => date('Y-m-d')
+                )
+            );
             return $app['templating']->render(
                 'form_success.html.php',
                 array()
             );
         }
-
-        /*Werte werden an Beiträge-Site übergeben
-        return $app['templating']->render(
-            'beitraege.html.php',
-            array(
-                'title' => $title,
-                'text' => $text
-            )
-        );*/
-    }
-    else {
+    } else {
         return $app['templating']->render(
             'form.html.php',
             array()
@@ -59,8 +57,12 @@ $app->match('/form', function(Request $request) use($app) {
 });
 
 $app->get('/beitraege', function() use($app) {
+    $dbConnection = $app['db'];
+    $posts = $dbConnection->fetchAll('select * from blog_post');
     return $app['templating']->render(
         'beitraege.html.php',
-        array()
+        array(
+            'posts' => $posts
+        )
     );
 });
