@@ -27,17 +27,33 @@ $app->match('/form', function(Request $request) use($app) {
     if ($request->isMethod('post')) {
         $title = $request->get('title');
         $text = $request->get('text');
+
+        if (($text=='') || ($title=='')) {
+            return $app['templating']->render(
+                'form_error.html.php',
+                array()
+            );
+        }
+        else {
+            return $app['templating']->render(
+                'form_success.html.php',
+                array()
+            );
+        }
+
+        /*Werte werden an Beiträge-Site übergeben
         return $app['templating']->render(
             'beitraege.html.php',
             array(
                 'title' => $title,
                 'text' => $text
             )
-        );
+        );*/
     }
     else {
         return $app['templating']->render(
-            'form.html.php'
+            'form.html.php',
+            array()
         );
     }
 });
