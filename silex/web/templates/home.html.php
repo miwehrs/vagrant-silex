@@ -3,12 +3,15 @@ $view->extend('layout.html.php');
 $view['slots']->set('title', "Home");
 ?>
 
+<!DOCTYPE html>
+
+<html>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
             <div class="jumbotron">
                 <h1>Willkommen auf Michis Blog!</h1>
-                <p>Schaue dir die neuesten Beiträge an oder verfasse selbst einen Beitrag</p>
+                <p>Schau dir die neuesten Beiträge an oder verfasse selbst einen Beitrag</p>
                     <a class="btn btn-primary" href="/beitraege" role="button">
                         <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
                         Alle Beiträge
@@ -46,3 +49,4 @@ $view['slots']->set('title', "Home");
         </div>
     </div>
 </div>
+</html>

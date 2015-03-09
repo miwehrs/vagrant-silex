@@ -24,15 +24,18 @@ $app->get('/home', function () use($app) {
 
 // match -> get und post in einem
 $app->match('/form', function(Request $request) use($app) {
+    $error = 0;
     if ($request->isMethod('post')) {
         $dbConnection = $app['db'];
         $title = $request->get('title', '');
         $text = $request->get('text', '');
-
         if (($text=='') || ($title=='')) {
+            $error = 1;
             return $app['templating']->render(
-                'form_error.html.php',
-                array()
+                'form.html.php',
+                array(
+                    'error' => $error
+                )
             );
         } else {
             $dbConnection->insert(
@@ -40,7 +43,7 @@ $app->match('/form', function(Request $request) use($app) {
                 array(
                     'title' => $title,
                     'text' => $text,
-                    'createdAt' => date('Y-m-d')
+                    'created_at' => date('Y-m-d')
                 )
             );
             return $app['templating']->render(
@@ -51,18 +54,33 @@ $app->match('/form', function(Request $request) use($app) {
     } else {
         return $app['templating']->render(
             'form.html.php',
-            array()
+            array(
+                'error' => $error
+            )
         );
     }
 });
 
 $app->get('/beitraege', function() use($app) {
     $dbConnection = $app['db'];
-    $posts = $dbConnection->fetchAll('select * from blog_post');
+    $posts = $dbConnection->fetchAll('select * from blog_post ORDER BY id DESC');
     return $app['templating']->render(
         'beitraege.html.php',
         array(
             'posts' => $posts
+        )
+    );
+});
+
+$app->get('/beitrag/{id}', function($id) use($app) {
+    $dbConnection = $app['db'];
+    $post = $dbConnection->fetchAssoc('SELECT * FROM blog_post WHERE id = ?',
+        array($id)
+    );
+    return $app['templating']->render(
+        'beitrag.html.php',
+        array(
+            'post' => $post
         )
     );
 });

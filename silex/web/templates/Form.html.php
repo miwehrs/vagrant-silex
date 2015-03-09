@@ -11,6 +11,13 @@ $view['slots']->set('title', "Neuer Beitrag");
             <div class="panel panel-default">
                 <div class="panel-heading"><b>Neuer Beitrag</b></div>
                 <div class="panel-body">
+                    <?php if ($error) : ?>
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                Bitte alle Felder ausfüllen!
+                            </div>
+                        </div>
+                    <?php endif ?>
                     <div class="form-group">
                         <label for="title">Titel</label>
                         <form action="/form" method="post">
