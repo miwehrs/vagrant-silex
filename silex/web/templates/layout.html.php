@@ -40,21 +40,30 @@ $title = $slots->get('title', 'Bootstrap')
         </div>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li <?= $title == "Home" ? 'class="active"' : "" ?>>
+                <li <?= $title == "Home" ? 'class="active"' : '' ?>>
                     <a href="/home">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                         Home
-                        <span class="sr-only">(current)</span></a></li>
-                <li <?= $title == "Beiträge" ? 'class="active"' : "" ?>>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li <?= $title == "Beiträge" ? 'class="active"' : '' ?>>
                     <a href="/beitraege">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                         Beiträge
-                    </a></li>
-                <li <?= $title == "Neuer Beitrag" ? 'class="active"' : "" ?>>
+                    </a>
+                </li>
+                <li <?= $title == "Neuer Beitrag" ? 'class="active"' : '' ?>>
                     <a href="/form">
                         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
                         Neuer Beitrag
-                    </a></li>
+                    </a>
+                </li>
+                <li <?= $title == "Login" ? 'class="active"' : '' ?>>
+                    <a href="/login">
+                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                        Login
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

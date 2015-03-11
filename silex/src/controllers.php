@@ -84,3 +84,9 @@ $app->get('/beitrag/{id}', function($id) use($app) {
         )
     );
 });
+
+$app->get('/login', function() use($app) {
+    return $app['templating']->render(
+        'login.html.php'
+    );
+});
