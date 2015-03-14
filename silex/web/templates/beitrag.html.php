@@ -16,6 +16,8 @@ $view['slots']->set('title', $post['title']);
                 </div>
                 <div class="panel-body">
                     <?php echo $post['text'] ?>
+                    <br/>
+                    <b>-<?php echo $post['author'] ?></b>
                 </div>
                 <div class="panel-footer">
                     <a href="/beitraege">

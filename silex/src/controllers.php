@@ -1,5 +1,7 @@
 <?php
+session_start();
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 $app->get('/welcome/{name}', function ($name) use ($app) {
     return $app['templating']->render(
@@ -15,20 +17,55 @@ $app->get('/welcome-twig/{name}', function ($name) use ($app) {
     );
 });
 
-$app->get('/home', function () use($app) {
-    return $app['templating']->render(
-        'home.html.php',
-        array()
-    );
+$app->match('/home', function(Request $request) use($app) {
+    $error = 0;
+    if ($request->isMethod('post')) {
+        $dbConnection = $app['db'];
+        $name = $request->get('name', '');
+        $password = $request->get('password', '');
+        if (($name=='') || ($password=='')) {
+            $error = 1;
+            return $app['templating']->render(
+                'home.html.php',
+                array(
+                    'error' => $error
+                )
+            );
+        } else {
+            $users = $dbConnection->fetchAll('SELECT * FROM user');
+            foreach ($users as $user) {
+                if (($user['name'] == $name) && ($user['password'] == $password)) {
+                    $_SESSION['username'] = $name;
+                    return $app['templating']->render(
+                        'login_success.html.php',
+                        array()
+                    );
+                }
+            }
+            return $app['templating']->render(
+                'home.html.php',
+                array(
+                    'error' => 1
+                )
+            );
+        }
+    } else {
+        return $app['templating']->render(
+            'home.html.php',
+            array(
+                'error' => $error
+            )
+        );
+    }
 });
 
-// match -> get und post in einem
 $app->match('/form', function(Request $request) use($app) {
     $error = 0;
     if ($request->isMethod('post')) {
         $dbConnection = $app['db'];
         $title = $request->get('title', '');
         $text = $request->get('text', '');
+        $user = isset($_SESSION['username']) ? $_SESSION['username'] : null;
         if (($text=='') || ($title=='')) {
             $error = 1;
             return $app['templating']->render(
@@ -37,13 +74,19 @@ $app->match('/form', function(Request $request) use($app) {
                     'error' => $error
                 )
             );
+        } elseif (!$user) {
+            return $app['templating']->render(
+                'login.html.php',
+                array()
+            );
         } else {
             $dbConnection->insert(
                 'blog_post',
                 array(
                     'title' => $title,
                     'text' => $text,
-                    'created_at' => date('Y-m-d')
+                    'created_at' => date('Y-m-d'),
+                    'author' => $_SESSION['username']
                 )
             );
             return $app['templating']->render(
@@ -63,7 +106,7 @@ $app->match('/form', function(Request $request) use($app) {
 
 $app->get('/beitraege', function() use($app) {
     $dbConnection = $app['db'];
-    $posts = $dbConnection->fetchAll('select * from blog_post ORDER BY id DESC');
+    $posts = $dbConnection->fetchAll('SELECT * FROM blog_post ORDER BY id DESC');
     return $app['templating']->render(
         'beitraege.html.php',
         array(
@@ -85,8 +128,90 @@ $app->get('/beitrag/{id}', function($id) use($app) {
     );
 });
 
-$app->get('/login', function() use($app) {
+$app->match('/login', function(Request $request) use($app) {
+    $error = 0;
+    if ($request->isMethod('post')) {
+        $dbConnection = $app['db'];
+        $name = $request->get('name', '');
+        $password = $request->get('password', '');
+        if (($name=='') || ($password=='')) {
+            $error = 1;
+            return $app['templating']->render(
+                'login.html.php',
+                array(
+                    'error' => $error
+                )
+            );
+        } else {
+            $users = $dbConnection->fetchAll('SELECT * FROM user');
+            foreach ($users as $user) {
+                if (($user['name'] == $name) && ($user['password'] == $password)) {
+                    $_SESSION['username'] = $name;
+                    return $app['templating']->render(
+                        'login_success.html.php',
+                        array()
+                    );
+                }
+            }
+            return $app['templating']->render(
+                'login.html.php',
+                array(
+                    'error' => 1
+                )
+            );
+        }
+    } else {
+        return $app['templating']->render(
+            'login.html.php',
+            array(
+                'error' => $error
+            )
+        );
+    }
+});
+
+$app->match('/registrierung', function(Request $request) use($app) {
+    $error = 0;
+    if ($request->isMethod('post')) {
+        $dbConnection = $app['db'];
+        $name = $request->get('name', '');
+        $password = $request->get('password', '');
+        if (($name=='') || ($password=='')) {
+            $error = 1;
+            return $app['templating']->render(
+                'registrierung.html.php',
+                array(
+                    'error' => $error
+                )
+            );
+        } else {
+            $dbConnection->insert(
+                'user',
+                array(
+                    'name' => $name,
+                    'password' => $password
+                )
+            );
+            return $app['templating']->render(
+                'reg_success.html.php',
+                array()
+            );
+        }
+    } else {
+        return $app['templating']->render(
+            'registrierung.html.php',
+            array(
+                'error' => $error
+            )
+        );
+    }
+});
+
+$app->get('/logout', function() use($app) {
+    session_destroy();
+    $_SESSION['username'] = null;
     return $app['templating']->render(
-        'login.html.php'
+        'login.html.php',
+        array()
     );
 });

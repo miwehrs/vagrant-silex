@@ -58,12 +58,20 @@ $title = $slots->get('title', 'Bootstrap')
                         Neuer Beitrag
                     </a>
                 </li>
+                <?php if(isset($_SESSION['username'])) { ?>
+                <li <?= $title == "User" ? 'class="active"' : '' ?>>
+                    <a href='/logout'>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        <?php echo $_SESSION['username'] ?>
+                    </a>
+                <?php } else { ?>
                 <li <?= $title == "Login" ? 'class="active"' : '' ?>>
                     <a href="/login">
                         <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
                         Login
                     </a>
                 </li>
+                <?php } ?>
             </ul>
         </div>
     </div>

@@ -25,9 +25,11 @@ $view['slots']->set('title', 'Beiträge');
                                 <?php echo $post['title'] . ' vom ' . $post['created_at'] ?>
                             </div>
                             <div class="panel-body">
-                                <?php echo substr($post['text'], 0, 200);
-                                if (strlen($post['text']) > 200) { ?>
+                                <?php echo substr($post['text'], 0, 200); ?>
+                                <?php if (strlen($post['text']) > 200) { ?>
                                     [...]
+                                    <br/>
+                                    <b>-<?php echo $post['author'] ?></b>
                                     <br/><br/>
                                     <a href="/beitrag/<?php echo $post['id'] ?>">
                                         Weiterlesen
