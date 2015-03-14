@@ -14,17 +14,16 @@ $view['slots']->set('title', 'Login');
             </div>
             <div class='panel-body'>
                 Du hast dich erfolgreich angemeldet. Sieh dir an, was es Neues gibt oder verfasse einen eigenen Beitrag!
-                <br/>
-                <a class="btn btn-primary" href="/beitraege" role="button">
-                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                    Alle Beiträge
-                </a>
-                <a class="btn btn-success" href="/form" role="button">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                    Neuen Beitrag verfassen
-                </a>
             </div>
         </div>
+        <a class='btn btn-primary' href='/beitraege' role='button'>
+            <span class='glyphicon glyphicon-th-list' aria-hidden='true'></span>
+            Alle Beiträge
+        </a>
+        <a class='btn btn-success' href='/form' role='button'>
+            <span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>
+            Neuen Beitrag verfassen
+        </a>
     </div>
 </div>
 </html>

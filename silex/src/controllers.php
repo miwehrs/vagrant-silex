@@ -3,26 +3,13 @@ session_start();
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-$app->get('/welcome/{name}', function ($name) use ($app) {
-    return $app['templating']->render(
-        'hello.html.php',
-        array('name' => $name)
-    );
-});
-
-$app->get('/welcome-twig/{name}', function ($name) use ($app) {
-    return $app['twig']->render(
-        'hello.html.twig',
-        array('name' => $name)
-    );
-});
-
 $app->match('/home', function(Request $request) use($app) {
     $error = 0;
     if ($request->isMethod('post')) {
         $dbConnection = $app['db'];
         $name = $request->get('name', '');
         $password = $request->get('password', '');
+        // Überprüfung, ob ein Feld nicht ausgefüllt wurde
         if (($name=='') || ($password=='')) {
             $error = 1;
             return $app['templating']->render(
@@ -32,6 +19,7 @@ $app->match('/home', function(Request $request) use($app) {
                 )
             );
         } else {
+            // Überprüfung, ob Benutzer in der Datenbank "user" vorhanden ist
             $users = $dbConnection->fetchAll('SELECT * FROM user');
             foreach ($users as $user) {
                 if (($user['name'] == $name) && ($user['password'] == $password)) {
@@ -75,6 +63,7 @@ $app->match('/form', function(Request $request) use($app) {
                 )
             );
         } elseif (!$user) {
+            // Wenn kein User angemeldet ist, wird der User zum Login weitergeleitet
             return $app['templating']->render(
                 'login.html.php',
                 array()
@@ -129,6 +118,7 @@ $app->get('/beitrag/{id}', function($id) use($app) {
 });
 
 $app->match('/login', function(Request $request) use($app) {
+    // Funktion analog zum Login-Feld der Home-Site
     $error = 0;
     if ($request->isMethod('post')) {
         $dbConnection = $app['db'];

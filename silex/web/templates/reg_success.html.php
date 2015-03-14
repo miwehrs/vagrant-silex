@@ -15,11 +15,11 @@ $view['slots']->set('title', 'Registrierung');
             <div class='panel-body'>
                 Du hast dich erfolgreich registriert. Melde dich gleich an!
                 <br/>
-                <a class="btn btn-primary" href="/login" role="button">
-                    Zum Login
-                </a>
             </div>
         </div>
+        <a class='btn btn-primary' href='/login' role='button'>
+            Zum Login
+        </a>
     </div>
 </div>
 </html>
